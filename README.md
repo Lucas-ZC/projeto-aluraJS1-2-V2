@@ -38,8 +38,7 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 
 ***PC não conectado com o git/gerar chave SSH:***
 - ssh-keygen -t ed25519 -C "SEU EMAIL AQUI” (terminal);
-- enter;
-- enter;
+- enter e depois mais um enter;
 - Pasta(do pc);
 - Pasta de usuário;
 - .ssh;
@@ -54,3 +53,19 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 - Copiar https.git no github;
 - Abrir Windows powershell;
 - git clone + colar.
+
+***Não mostrar alguns dos arquivos no github:***
+- Criar um arquivo .gitignore (no visual studio);
+- Escrever os nomes;
+- Pra pasta: nome/, pra arquivo especifico: exemplo.txt, pra passar um padrão: *.css.
+Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.com/developers/gitignore.
+
+***Compartilhar códigos (com o gist):***
+- Ir na tela inicial do repositório com o trecho que quer compartilhar;
+- Create new (ícone de “+” entre a barra de pesquisa e perfil);
+- new gist;
+- Preencher campo do nome do arquivo e trecho de código de cada campo, além de preencher a descrição;
+- Se tiver mais um trecho que quiser adicionar, clique “Add file”;
+- Escolher deixar o gist público ou não, pela seta do lado do “create secret gist”;
+- Clicar no create;
+- Para compartilhar é só copiar o link da página web: https://gist.github.com/Lucas-ZC/638945c1ac2b8a16f7e3f4126087d00f.
