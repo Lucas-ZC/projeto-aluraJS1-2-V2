@@ -136,12 +136,11 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 </div>
 ```
 - Va no seu readme do perfil, e veja como ficou.
+- Meu perfil de exemplo: https://github.com/Lucas-ZC/Lucas-ZC/blob/main/README.md
 
 ***Adicionar pacman no readme:***
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph.svg">
-  <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph.svg">
+  <img src="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph-dark.svg" alt="Pac-Man contribution graph" width="100%">
 </picture>
 
 - Actions;
@@ -192,3 +191,4 @@ jobs:
 </picture>
 ```
 - Va no seu readme do perfil, e veja como ficou.
+- Meu perfil de exemplo: https://github.com/Lucas-ZC/Lucas-ZC/blob/main/README.md
