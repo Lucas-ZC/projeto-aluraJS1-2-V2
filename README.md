@@ -73,7 +73,7 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 ***Adicionar cobra no readme:***
 <div align="center">
 
-  ![Snake animation](https://github.com/Lucas-ZC/Lucas-ZC/blob/snake/github-contribution-grid-snake.svg)
+  ![Snake animation](https://github.com/LucasZanellaCapitanio-dev/LucasZanellaCapitanio-dev/blob/output/github-contribution-grid-snake.svg)
 </div>
 
 - Ir no repositório do readme do perfil;
