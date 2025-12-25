@@ -73,7 +73,7 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 ***Adicionar cobra no readme:***
 <div align="center">
 
-  ![Snake animation](https://github.com/Lucas-ZC/Lucas-ZC/blob/output/github-contribution-grid-snake.svg)
+  ![Snake animation](https://github.com/Lucas-ZC/Lucas-ZC/blob/snake/github-contribution-grid-snake.svg)
 </div>
 
 - Ir no repositório do readme do perfil;
@@ -87,40 +87,47 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 - Copie e cole esse código (Não precisa alterar nada):
   
 ```
-  name: generate animation
-  on:
-    schedule:
-      - cron: "0 */24 * * *" 
+name: Generate Snake Animation
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
     
-    workflow_dispatch:
-    
-    push:
-      branches:
-      - master
-      
-  jobs:
-    generate:
-      permissions: 
-        contents: write
-      runs-on: ubuntu-latest
-      timeout-minutes: 5
-      
-      steps:
-        - name: generate github-contribution-grid-snake.svg
-          uses: Platane/snk/svg-only@v3
-          with:
-            github_user_name: ${{ github.repository_owner }}
-            outputs: |
-              dist/github-contribution-grid-snake.svg
-              dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-            
-        - name: push github-contribution-grid-snake.svg to the output branch
-          uses: crazy-max/ghaction-github-pages@v3.1.0
-          with:
-            target_branch: output
-            build_dir: dist
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Generate snake animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: usuario <--------------- Alterar aqui
+          outputs: |
+            dist/github-contribution-grid-snake.svg
+            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+          
+      - name: Deploy to snake branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git checkout --orphan snake || git checkout snake
+          git rm -rf . || echo "Nothing to remove"
+          cp -r dist/* . 2>/dev/null || echo "No files in dist/"
+          
+          git add .
+          git commit -m "Update Snake animation" || echo "No changes"
+          git push origin snake --force
   ```
 - Commit changes;
 - Commit changes;
@@ -132,7 +139,7 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 ```
 <div align="center">
 
-  ![Snake animation](https://github.com/Usuario/Usuario/blob/output/github-contribution-grid-snake.svg)
+  ![Snake animation](https://github.com/Usuario/Usuario/blob/snake/github-contribution-grid-snake.svg)
 </div>
 ```
 - Va no seu readme do perfil, e veja como ficou.
@@ -152,29 +159,41 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 name: Generate Pac-Man Game
 on:
   schedule:
-    - cron: "0 */24 * * *"
+    - cron: "0 12 * * *"
   workflow_dispatch:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
 jobs:
   generate:
     permissions:
       contents: write
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Generate pacman-contribution-graph.svg
         uses: abozanona/pacman-contribution-graph@main
         with:
-          github_user_name: Usuario <----------- Alterar aqui
-      - name: Push pacman-contribution-graph.svg to the output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
-        with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_user_name: usuario <--------------- Alterar aqui
+
+      - name: Deploy to output branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git checkout --orphan output || git checkout output
+          git rm -rf . || echo "Nothing to remove"
+          cp -r dist/* . 2>/dev/null || echo "No files in dist/"
+          
+          git add .
+          git commit -m "Update Pacman graph" || echo "No changes"
+          git push origin output --force
 ```
 - Commit changes;
 - Commit changes;
