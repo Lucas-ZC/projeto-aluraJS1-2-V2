@@ -69,3 +69,126 @@ Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.
 - Escolher deixar o gist público ou não, pela seta do lado do “create secret gist”;
 - Clicar no create;
 - Para compartilhar é só copiar o link da página web: https://gist.github.com/Lucas-ZC/638945c1ac2b8a16f7e3f4126087d00f.
+
+***Adicionar cobra no readme:***
+<div align="center">
+
+  ![Snake animation](https://github.com/Lucas-ZC/Lucas-ZC/blob/output/github-contribution-grid-snake.svg)
+</div>
+
+- Ir no repositório do readme do perfil;
+- Settings;
+- Pages;
+- No Build and deployment, se o source for "deploy from a branch" mude pra GitHub Actions;
+- Actions;
+- New workflow;
+- Set up a workflow yourself;
+- Veja se o nome está main.yml;
+- Copie e cole esse código (Não precisa alterar nada):
+  
+```
+  name: generate animation
+  on:
+    schedule:
+      - cron: "0 */24 * * *" 
+    
+    workflow_dispatch:
+    
+    push:
+      branches:
+      - master
+      
+  jobs:
+    generate:
+      permissions: 
+        contents: write
+      runs-on: ubuntu-latest
+      timeout-minutes: 5
+      
+      steps:
+        - name: generate github-contribution-grid-snake.svg
+          uses: Platane/snk/svg-only@v3
+          with:
+            github_user_name: ${{ github.repository_owner }}
+            outputs: |
+              dist/github-contribution-grid-snake.svg
+              dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            
+        - name: push github-contribution-grid-snake.svg to the output branch
+          uses: crazy-max/ghaction-github-pages@v3.1.0
+          with:
+            target_branch: output
+            build_dir: dist
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ```
+- Commit changes;
+- Commit changes;
+- Volte em Actions;
+- generate animation;
+- Run workflow;
+- Run workflow;
+- Va para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
+```
+<div align="center">
+
+  ![Snake animation](https://github.com/Usuario/Usuario/blob/output/github-contribution-grid-snake.svg)
+</div>
+```
+- Va no seu readme do perfil, e veja como ficou.
+
+***Adicionar pacman no readme:***
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph.svg">
+  <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Lucas-ZC/Lucas-ZC/output/pacman-contribution-graph.svg">
+</picture>
+
+- Actions;
+- New workflow;
+- Set up a workflow yourself;
+- Deixe o nome como "pacman.yml";
+- Copie e cole esse código (Alterar usuario para seu nome do github): 
+```
+name: Generate Pac-Man Game
+on:
+  schedule:
+    - cron: "0 */24 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  generate:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Generate pacman-contribution-graph.svg
+        uses: abozanona/pacman-contribution-graph@main
+        with:
+          github_user_name: Usuario <----------- Alterar aqui
+      - name: Push pacman-contribution-graph.svg to the output branch
+        uses: crazy-max/ghaction-github-pages@v3.1.0
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+- Commit changes;
+- Commit changes;
+- Volte em Actions;
+- Generate Pac-Man Game;
+- Run workflow;
+- Run workflow;
+- Va para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
+```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Usuario/Usuario/output/pacman-contribution-graph-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Usuario/Usuario/output/pacman-contribution-graph.svg">
+  <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Usuario/Usuario/output/pacman-contribution-graph.svg">
+</picture>
+```
+- Va no seu readme do perfil, e veja como ficou.
