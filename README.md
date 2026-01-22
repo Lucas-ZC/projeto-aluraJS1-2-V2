@@ -30,6 +30,12 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 - ***git push origin main*** -> envia os commits do repositório local pro repositório remoto
 - ***git pull origin main*** -> pega os commits do repositório remoto pro local
 - ***git log*** -> mostra histórico de commits
+- ***git log --oneline*** -> mostra no terminal apenas o hash (código) e nome do commit
+- ***git log -p*** -> mostra git log normal + diff (linhas de código adicionadas e removidas)
+- ***git log --graph*** -> mostra o log com várias linhas verticais e ramificações que facilitam localizar commits, merges ou separação de branches
+- ***git log --help*** -> mostra um manual de como usar o git log (muito grande) que pode aparecer no terminal ou na guia do navegador. Dica, se aparecer no terminal, digitando “/” seguido da informação que quer buscar, onde essa palavra aparecer, ela será destacada
+- ***git log --format=”%H %an”*** ->  mostra um log com as informações e ordem escolhidas entre as aspas duplas, neste caso mostra o hash (código) e nome do usuário. Para saber melhor como usar “git log –format”, use “git log --help” e em seguida “/PRETTY FORMATS”, essa é a parte que essas informações estão
+
 - ***git revert + id do commit no git log*** -> reverte o commit fazendo um commit
 - ***git reset  --hard + passar id do commit anterior, que quer a versão*** -> desfaz commit e mudança no código
 - ***git commit –amend -m “mensagem”*** -> altera nome do último commit
@@ -57,8 +63,7 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 ***Não mostrar alguns dos arquivos no github:***
 - Criar um arquivo .gitignore (no visual studio);
 - Escrever os nomes;
-- Pra pasta: nome/, pra arquivo especifico: exemplo.txt, pra passar um padrão: *.css.
-Dica: site que gera gitignore pra cada linguagem/tecnologia: https://www.toptal.com/developers/gitignore.
+- Pra pasta: nome/, pra arquivo especifico: exemplo.txt, pra passar um padrão: *.css
 
 ***Compartilhar códigos (com o gist):***
 - Ir na tela inicial do repositório com o trecho que quer compartilhar;
