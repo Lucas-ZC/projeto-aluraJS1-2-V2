@@ -44,6 +44,8 @@ Projeto utilizado no curso do Alura para ensino de Git e Github
 - ***git branch*** -> mostra as branches disponíveis
 - ***git switch (branch)*** -> troca para a branch digitada
 - ***git switch -c (branch)*** -> cria e troca para a branch criada
+- ***git merge (branch)*** -> junta a branch informada à branch atual, preservando o histórico, normalmente criando um commit de merge
+- ***git rebase (branch)*** -> reaplica os commits da branch atual em cima da branch informada, atualizando a branch ramificada e criando um histórico linear (sem commit de merge)
 
 <h3>Tutoriais </h3>
 
