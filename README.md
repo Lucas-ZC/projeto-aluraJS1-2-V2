@@ -3,7 +3,7 @@
 ![Badge Finalizado](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
 
 <h2>Sobre </h2>
-Projeto utilizado nos cursos do Alura para ensino de Git e Github 
+Projeto utilizado no curso do Alura para ensino de Git e Github 
 <div align="left">
   <br>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="120" alt="git logo" />
@@ -18,38 +18,43 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 
 - ***git init*** -> inicia o git 
 - ***git add .*** -> adiciona todos arquivos ao git
-- ***git commit -m “texto”*** -> commit
 - ***git add README.md*** -> adiciona read me
+- ***git commit -m “texto”*** -> faz commit com o título digitado
 - ***git config --global user.email “@gmail.com”*** -> Salvar email
 - ***git config --global user.nome “Fulano”*** -> Salvar nome
 - ***git branch -M main*** -> Renomeia a branch atual para main
-- ***git remote add origin link do ssh do git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
-- ***git push -u origin main*** -> Envia seus commits locais para o repositório remoto no GitHub e configura o rastreamento da branch
 - ***git status*** -> status das últimas alterações
+- ***git remote add origin link do ssh do git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
 - ***git remote*** -> listar repositórios remotos
+- ***git push -u origin main*** -> Envia seus commits locais para o repositório remoto no GitHub e configura o rastreamento da branch
 - ***git push origin main*** -> envia os commits do repositório local pro repositório remoto
 - ***git pull origin main*** -> pega os commits do repositório remoto pro local
+- ***git (comando git) --help*** -> mostra um manual completo de como usar o comando git selecionado
 - ***git log*** -> mostra histórico de commits
 - ***git log --oneline*** -> mostra no terminal apenas o hash (código) e nome do commit
 - ***git log -p*** -> mostra git log normal + diff (linhas de código adicionadas e removidas)
 - ***git log --graph*** -> mostra o log com várias linhas verticais e ramificações que facilitam localizar commits, merges ou separação de branches
 - ***git log --help*** -> mostra um manual de como usar o git log (muito grande) que pode aparecer no terminal ou na guia do navegador. Dica, se aparecer no terminal, digitando “/” seguido da informação que quer buscar, onde essa palavra aparecer, ela será destacada
-- ***git log --format=”%H %an”*** ->  mostra um log com as informações e ordem escolhidas entre as aspas duplas, neste caso mostra o hash (código) e nome do usuário. Para saber melhor como usar “git log –format”, use “git log --help” e em seguida “/PRETTY FORMATS”, essa é a parte que essas informações estão
-
+- ***git log --format=”%H %an”*** -> mostra um log com as informações e ordem escolhidas entre as aspas duplas, neste caso mostra o hash (código) e nome do usuário. Para saber melhor como usar “git log –format”, use “git log --help” e em seguida “/PRETTY FORMATS”, essa é a parte que essas informações estão
+- ***git show (hash do commit)*** -> mostra as informações completas do commit escolhido, com hash, autor, data, mensagem e diff, se não tiver nenhum hash ele mostra as informações do último commit
+- ***git diff (hash 1)..(hash 2)*** -> Compara diferentes commits e mostra quais as diferenças. Se estiver vazio, por padrão compara o repositório local com o remoto, e se tiver apenas um, compara com a versão local
 - ***git revert + id do commit no git log*** -> reverte o commit fazendo um commit
 - ***git reset  --hard + passar id do commit anterior, que quer a versão*** -> desfaz commit e mudança no código
 - ***git commit –amend -m “mensagem”*** -> altera nome do último commit
+- ***git branch*** -> mostra as branches disponíveis
+- ***git switch (branch)*** -> troca para a branch digitada
+- ***git switch -c (branch)*** -> cria e troca para a branch criada
 
 <h3>Tutoriais </h3>
 
 ***PC não conectado com o git/gerar chave SSH:***
 - ssh-keygen -t ed25519 -C "SEU EMAIL AQUI” (terminal);
-- enter e depois mais um enter;
+- Enter e depois mais um enter;
 - Pasta(do pc);
 - Pasta de usuário;
 - .ssh;
 - Conferir os arquivos e ver qual é a chave pública e copiar;
-- Settings (da conta);
+- settings (da conta);
 - SSH and GPG keys;
 - new SSH key; 
 - Title: algum nome;
@@ -74,6 +79,10 @@ Projeto utilizado nos cursos do Alura para ensino de Git e Github
 - Escolher deixar o gist público ou não, pela seta do lado do “create secret gist”;
 - Clicar no create;
 - Para compartilhar é só copiar o link da página web: https://gist.github.com/Lucas-ZC/638945c1ac2b8a16f7e3f4126087d00f.
+
+<h3>Conceitos </h3>
+- branch: ramificações ou linhas de trabalho no projeto, por exemplo a main
+- head: 'último commit', é a branch que está no código.
 
 ***Adicionar cobra no readme:***
 <div align="center">
