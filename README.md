@@ -15,7 +15,7 @@ Projeto utilizado no curso do Alura para ensino de Git e Github
 <h2>O que foi passado </h2>
 
 <h3>Comandos do Terminal </h3>
-
+OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git init*** -> inicia o git 
 - ***git add .*** -> adiciona todos arquivos ao git
 - ***git add README.md*** -> adiciona read me
@@ -46,6 +46,13 @@ Projeto utilizado no curso do Alura para ensino de Git e Github
 - ***git switch -c (branch)*** -> cria e troca para a branch criada
 - ***git merge (branch)*** -> junta a branch informada à branch atual, preservando o histórico, normalmente criando um commit de merge
 - ***git rebase (branch)*** -> reaplica os commits da branch atual em cima da branch informada, atualizando a branch ramificada e criando um histórico linear (sem commit de merge)
+- ***git stash*** -> guarda mudanças temporariamente sem criar commit ou branch, ou seja, não vai para o histórico do Git. Ele permite trocar de branch sem perder trabalho em andamento. Dica: é útil quando surgem erros mais urgentes e é necessário mudar de branch; usando git stash, as alterações ficam salvas localmente, evitando commits temporários que poluem o histórico
+- ***git stash push -m "nome" *** -> faz o mesmo que o git stash, mas é possível nomear o stash criado
+- ***git stash pop*** -> libera o que foi salvo no último git stash da lista, e o remove dessa lista
+- ***git stash apply (índice)*** -> faz um git stash pop, aplica o stash no índice digitado. Dica: para ver o índice use 'git stash list'
+- ***git stash list*** -> lista o que está salvo no stash
+- ***git stash clear*** -> excluí o que está na lista do stash
+
 
 <h3>Tutoriais </h3>
 
