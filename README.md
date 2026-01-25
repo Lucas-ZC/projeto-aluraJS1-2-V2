@@ -16,13 +16,14 @@ Projeto utilizado no curso do Alura para ensino de Git e Github
 
 <h3>Comandos do Terminal </h3>
 OBS: onde houver parênteses são variáveis para serem substituídas
-- ***git init*** -> inicia o git 
-- ***git add .*** -> adiciona todos arquivos ao git
+
+- ***git init*** -> inicia o git
+- ***git add .*** -> adiciona todos arquivos ao git. Se no lugar do ponto for escrito o nome de um dos arquivos, esse arquivo que será adicionado
 - ***git add README.md*** -> adiciona read me
 - ***git commit -m “texto”*** -> faz commit com o título digitado
-- ***git config --global user.email “@gmail.com”*** -> Salvar email
-- ***git config --global user.nome “Fulano”*** -> Salvar nome
-- ***git branch -M main*** -> Renomeia a branch atual para main
+- ***git config --global user.email “@gmail.com”*** -> salvar email
+- ***git config --global user.nome “Fulano”*** -> salvar nome
+- ***git branch -M main*** -> renomeia a branch atual para main
 - ***git status*** -> status das últimas alterações
 - ***git remote add origin link do ssh do git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
 - ***git remote*** -> listar repositórios remotos
@@ -42,6 +43,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git reset  --hard + passar id do commit anterior, que quer a versão*** -> desfaz commit e mudança no código
 - ***git commit –amend -m “mensagem”*** -> altera nome do último commit
 - ***git branch*** -> mostra as branches disponíveis
+- ***git branch -d (branch)*** -> deleta a branch digitada
 - ***git switch (branch)*** -> troca para a branch digitada
 - ***git switch -c (branch)*** -> cria e troca para a branch criada
 - ***git merge (branch)*** -> junta a branch informada à branch atual, preservando o histórico, normalmente criando um commit de merge
@@ -52,6 +54,9 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git stash apply (índice)*** -> faz um git stash pop, aplica o stash no índice digitado. Dica: para ver o índice use 'git stash list'
 - ***git stash list*** -> lista o que está salvo no stash
 - ***git stash clear*** -> excluí o que está na lista do stash
+- ***git restore .*** -> volta o programa pro estado antes de ser modificado. O ponto pode ser substituido por um dos arquivos do projeto
+- ***git restore --staged (nome do arquivo)*** -> remove arquivos da staging area, desfazendo um git add sem perder as alterações no código
+- ***git restore --source=(hash) (nome do arquivo)*** -> restaura o arquivo para a versão presente no commit informado, substituindo a versão atual do arquivo
 
 
 <h3>Tutoriais </h3>
@@ -92,6 +97,11 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 <h3>Conceitos </h3>
 - branch: ramificações ou linhas de trabalho no projeto, por exemplo a main
 - head: 'último commit', é a branch que está no código.
+- staging area: é a área onde ficam os arquivos preparados para serem commitados. Arquivos entram nela com git add e saem com git restore --staged.
+- Repositório: é um local de armazenamento digital, utilizado para gerenciar arquivos, documentos, código-fonte e outros recursos de um projeto
+- Hash: código que é único para cada commit, tendo em torno de 40 caracteres
+- Git: é um sistema de controle de versão local que mantém o histórico completo de alterações do projeto. Ele permite salvar versões do código por meio de commits, facilitando o retorno a estados anteriores. Além disso, possibilita o uso de branches, permitindo o desenvolvimento paralelo de funcionalidades e a posterior integração dessas mudanças à branch principal.
+- GitHub: é uma plataforma que oferece hospedagem remota para repositórios Git, funcionando como backup e ponto central do projeto. Ele facilita a colaboração entre desenvolvedores por meio de pull requests, revisão de código e issues. Também é amplamente usado como portfólio público e fornece ferramentas adicionais, como GitHub Actions, automação e recursos de CI/CD.
 
 ***Adicionar cobra no readme:***
 <div align="center">
