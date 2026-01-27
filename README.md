@@ -63,6 +63,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git tag -d (tag)*** -> deleta a tag digitada. Dica: se tiver usado push origin dessa tag é necessário tirar do repositório remoto também
 - ***git tag (tag) -m "mensagem"*** -> cria uma tag com mensagem
 - ***git tag -v (tag)*** -> mostra informações da annotated tag digitada, mas se não tiver anotação nela não funciona
+- ***git cherry-pick (hash)*** -> puxa um commit especifico de outra branch e aplica
 
 
 <h3>Tutoriais </h3>
