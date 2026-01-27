@@ -1,9 +1,9 @@
-# Projeto de Treinamento de ***Git*** e ***Github***
+# Projeto de Treinamento de ***Git*** e ***GitHub***
 
 ![Badge Finalizado](http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=GREEN&style=for-the-badge)
 
 <h2>Sobre </h2>
-Projeto utilizado no curso do Alura para ensino de Git e Github 
+Projeto utilizado no curso do Alura para ensino de Git e GitHub 
 <div align="left">
   <br>
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="120" alt="git logo" />
@@ -17,15 +17,15 @@ Projeto utilizado no curso do Alura para ensino de Git e Github
 <h3>Comandos do Terminal </h3>
 OBS: onde houver parênteses são variáveis para serem substituídas
 
-- ***git init*** -> inicia o git
-- ***git add .*** -> adiciona todos arquivos ao git. Se no lugar do ponto for escrito o nome de um dos arquivos, esse arquivo que será adicionado
-- ***git add README.md*** -> adiciona read me
+- ***git init*** -> inicia o Git
+- ***git add .*** -> adiciona todos arquivos ao Git. Se no lugar do ponto for escrito o nome de um dos arquivos, esse arquivo que será adicionado
+- ***git add README.md*** -> adiciona README
 - ***git commit -m “texto”*** -> faz commit com o título digitado
 - ***git config --global user.email “@gmail.com”*** -> salvar email
-- ***git config --global user.nome “Fulano”*** -> salvar nome
+- ***git config --global user.name “Fulano”*** -> salvar nome
 - ***git branch -M main*** -> renomeia a branch atual para main
 - ***git status*** -> status das últimas alterações
-- ***git remote add origin link do ssh do git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
+- ***git remote add origin link do ssh do Git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
 - ***git remote*** -> listar repositórios remotos
 - ***git push -u origin main*** -> Envia seus commits locais para o repositório remoto no GitHub e configura o rastreamento da branch
 - ***git push origin main*** -> envia os commits do repositório local pro repositório remoto
@@ -38,10 +38,10 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git log --help*** -> mostra um manual de como usar o git log (muito grande) que pode aparecer no terminal ou na guia do navegador. Dica, se aparecer no terminal, digitando “/” seguido da informação que quer buscar, onde essa palavra aparecer, ela será destacada
 - ***git log --format=”%H %an”*** -> mostra um log com as informações e ordem escolhidas entre as aspas duplas, neste caso mostra o hash (código) e nome do usuário. Para saber melhor como usar “git log –format”, use “git log --help” e em seguida “/PRETTY FORMATS”, essa é a parte que essas informações estão
 - ***git show (hash do commit)*** -> mostra as informações completas do commit escolhido, com hash, autor, data, mensagem e diff, se não tiver nenhum hash ele mostra as informações do último commit
-- ***git diff (hash 1)..(hash 2)*** -> Compara diferentes commits e mostra quais as diferenças. Se estiver vazio, por padrão compara o repositório local com o remoto, e se tiver apenas um, compara com a versão local
-- ***git revert + id do commit no git log*** -> reverte o commit fazendo um commit
-- ***git reset  --hard + passar id do commit anterior, que quer a versão*** -> desfaz commit e mudança no código
-- ***git commit –amend -m “mensagem”*** -> altera nome do último commit
+- ***git diff (parâmetro1)..(parâmetro2)*** -> compara dois estados do repositório, que podem ser commits, branches ou referências como HEAD, mostrando as diferenças entre eles
+- ***git revert (id do commit no git log)*** -> reverte o commit fazendo um commit
+- ***git reset  --hard (hash)*** -> desfaz commits e alterações no código, voltando exatamente ao estado do commit informado
+- ***git commit –amend -m “mensagem”*** -> - ***git commit --amend*** -> altera o último commit, permitindo mudar a mensagem e/ou incluir arquivos esquecidos; para incluir arquivos, use git add no arquivo desejado e depois execute o amend
 - ***git branch*** -> mostra as branches disponíveis
 - ***git branch -d (branch)*** -> deleta a branch digitada
 - ***git switch (branch)*** -> troca para a branch digitada
@@ -51,24 +51,25 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git stash*** -> guarda mudanças temporariamente sem criar commit ou branch, ou seja, não vai para o histórico do Git. Ele permite trocar de branch sem perder trabalho em andamento. Dica: é útil quando surgem erros mais urgentes e é necessário mudar de branch; usando git stash, as alterações ficam salvas localmente, evitando commits temporários que poluem o histórico
 - ***git stash push -m "nome"*** -> faz o mesmo que o git stash, mas é possível nomear o stash criado
 - ***git stash pop*** -> libera o que foi salvo no último git stash da lista, e o remove dessa lista
-- ***git stash apply (índice)*** -> faz um git stash pop, aplica o stash no índice digitado. Dica: para ver o índice use 'git stash list'
+- ***git stash apply (índice)*** -> aplica o stash do índice informado, sem removê-lo da lista. Dica: para ver o índice use 'git stash list'
 - ***git stash list*** -> lista o que está salvo no stash
-- ***git stash clear*** -> excluí o que está na lista do stash
-- ***git restore .*** -> volta o programa pro estado antes de ser modificado. O ponto pode ser substituido por um dos arquivos do projeto
+- ***git stash clear*** -> exclui o que está na lista do stash
+- ***git restore .*** -> descarta alterações locais e restaura os arquivos para o estado do último commit. O ponto pode ser substituido por um dos arquivos do projeto
 - ***git restore --staged (nome do arquivo)*** -> remove arquivos da staging area, desfazendo um git add sem perder as alterações no código
 - ***git restore --source=(hash) (nome do arquivo)*** -> restaura o arquivo para a versão presente no commit informado, substituindo a versão atual do arquivo
-- ***git tag*** -> lista todas as tags salvas do git da máquina
-- ***git tag "nome da versão" (hash do commit)*** -> destaca o commit do hash digitado criando uma no nele. Dicas: geralmente usado para marcar uma versão do programa e por padrão não é enviado no github quando commitado. Se não tiver hash, ele seleciona o commit atual. Geralmente as tags são escritas como: v1.0, v1.1, v2.3.4, etc...
+- ***git tag*** -> lista todas as tags salvas do Git da máquina
+- ***git tag "nome da versão" (hash do commit)*** -> cria uma tag que marca o commit informado. Geralmente usada para marcar versões do projeto (ex: v1.0, v2.3.4). Se o hash não for informado, a tag aponta para o commit atual. Por padrão, tags não são enviadas ao GitHub automaticamente
 - ***git push origin --tags*** -> manda as tags do repositório local pro remoto. Dica: é possível mandar apenas uma tag específica substituindo o "--tags" pelo nome da tag
 - ***git tag -d (tag)*** -> deleta a tag digitada. Dica: se tiver usado push origin dessa tag é necessário tirar do repositório remoto também
-- ***git tag (tag) -m "mensagem"*** -> cria uma tag com mensagem
-- ***git tag -v (tag)*** -> mostra informações da annotated tag digitada, mas se não tiver anotação nela não funciona
+- ***git tag -a (tag) -m "mensagem"*** -> cria uma tag com mensagem
+- ***git tag -v (tag)*** valida e mostra informações de uma annotated tag, mas se não tiver anotação nela não funciona
 - ***git cherry-pick (hash)*** -> puxa um commit especifico de outra branch e aplica
+- ***git blame (arquivo)*** -> mostra linha por linha do arquivo, o commit que foi criada ou modificada, hash, quem fez, hora e o que foi alterado
 
 
 <h3>Tutoriais </h3>
 
-***PC não conectado com o git/gerar chave SSH:***
+***PC não conectado com o Git/gerar chave SSH:***
 - ssh-keygen -t ed25519 -C "SEU EMAIL AQUI” (terminal);
 - Enter e depois mais um enter;
 - Pasta(do pc);
@@ -101,7 +102,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - Clicar no create;
 - Para compartilhar é só copiar o link da página web: https://gist.github.com/Lucas-ZC/638945c1ac2b8a16f7e3f4126087d00f.
 
-***Públicar um release:***
+***Publicar um release:***
 - No canto direito da área code, clique em "Create a new release";
 - Select a tag
 - Selecione a tag que quer fazer o release
@@ -114,7 +115,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - staging area: é a área onde ficam os arquivos preparados para serem commitados. Arquivos entram nela com git add e saem com git restore --staged.
 - Repositório: é um local de armazenamento digital, utilizado para gerenciar arquivos, documentos, código-fonte e outros recursos de um projeto.
 - Hash: código que é único para cada commit, tendo em torno de 40 caracteres.
-- Tag (do git): .
+- Tag (do Git): rótulo que marca um commit específico, geralmente usado para versões (releases).
 - Git: é um sistema de controle de versão local que mantém o histórico completo de alterações do projeto. Ele permite salvar versões do código por meio de commits, facilitando o retorno a estados anteriores. Além disso, possibilita o uso de 
 branches, permitindo o desenvolvimento paralelo de funcionalidades e a posterior integração dessas mudanças à branch principal.
 - GitHub: é uma plataforma que oferece hospedagem remota para repositórios Git, funcionando como backup e ponto central do projeto. Ele facilita a colaboração entre desenvolvedores por meio de pull requests, revisão de código e issues. Também é amplamente usado como portfólio público e fornece ferramentas adicionais, como GitHub Actions, automação e recursos de CI/CD.
@@ -184,14 +185,14 @@ jobs:
 - generate animation;
 - Run workflow;
 - Run workflow;
-- Va para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
+- Vá para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
 ```
 <div align="center">
 
   ![Snake animation](https://github.com/Usuario/Usuario/blob/snake/github-contribution-grid-snake.svg)
 </div>
 ```
-- Va no seu readme do perfil, e veja como ficou.
+- Vá no seu readme do perfil, e veja como ficou.
 - Meu perfil de exemplo: https://github.com/Lucas-ZC/Lucas-ZC/blob/main/README.md
 
 ***Adicionar pacman no readme:***
@@ -250,7 +251,7 @@ jobs:
 - Generate Pac-Man Game;
 - Run workflow;
 - Run workflow;
-- Va para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
+- Vá para seu readme e copiei e cole isso (Alterando "Usuario" pelo seu nome do github):
 ```
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Usuario/Usuario/output/pacman-contribution-graph-dark.svg">
@@ -258,5 +259,5 @@ jobs:
   <img alt="Pac-Man contribution graph" src="https://raw.githubusercontent.com/Usuario/Usuario/output/pacman-contribution-graph.svg">
 </picture>
 ```
-- Va no seu readme do perfil, e veja como ficou.
+- Vá no seu readme do perfil, e veja como ficou.
 - Meu perfil de exemplo: https://github.com/Lucas-ZC/Lucas-ZC/blob/main/README.md
