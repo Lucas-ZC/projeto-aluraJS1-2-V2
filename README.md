@@ -49,7 +49,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git merge (branch)*** -> junta a branch informada à branch atual, preservando o histórico, normalmente criando um commit de merge
 - ***git rebase (branch)*** -> reaplica os commits da branch atual em cima da branch informada, atualizando a branch ramificada e criando um histórico linear (sem commit de merge)
 - ***git stash*** -> guarda mudanças temporariamente sem criar commit ou branch, ou seja, não vai para o histórico do Git. Ele permite trocar de branch sem perder trabalho em andamento. Dica: é útil quando surgem erros mais urgentes e é necessário mudar de branch; usando git stash, as alterações ficam salvas localmente, evitando commits temporários que poluem o histórico
-- ***git stash push -m "nome" *** -> faz o mesmo que o git stash, mas é possível nomear o stash criado
+- ***git stash push -m "nome"*** -> faz o mesmo que o git stash, mas é possível nomear o stash criado
 - ***git stash pop*** -> libera o que foi salvo no último git stash da lista, e o remove dessa lista
 - ***git stash apply (índice)*** -> faz um git stash pop, aplica o stash no índice digitado. Dica: para ver o índice use 'git stash list'
 - ***git stash list*** -> lista o que está salvo no stash
@@ -57,6 +57,12 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git restore .*** -> volta o programa pro estado antes de ser modificado. O ponto pode ser substituido por um dos arquivos do projeto
 - ***git restore --staged (nome do arquivo)*** -> remove arquivos da staging area, desfazendo um git add sem perder as alterações no código
 - ***git restore --source=(hash) (nome do arquivo)*** -> restaura o arquivo para a versão presente no commit informado, substituindo a versão atual do arquivo
+- ***git tag*** -> lista todas as tags salvas do git da máquina
+- ***git tag "nome da versão" (hash do commit)*** -> destaca o commit do hash digitado criando uma no nele. Dicas: geralmente usado para marcar uma versão do programa e por padrão não é enviado no github quando commitado. Se não tiver hash, ele seleciona o commit atual. Geralmente as tags são escritas como: v1.0, v1.1, v2.3.4, etc...
+- ***git push origin --tags*** -> manda as tags do repositório local pro remoto. Dica: é possível mandar apenas uma tag específica substituindo o "--tags" pelo nome da tag
+- ***git tag -d (tag)*** -> deleta a tag digitada. Dica: se tiver usado push origin dessa tag é necessário tirar do repositório remoto também
+- ***git tag (tag) -m "mensagem"*** -> cria uma tag com mensagem
+- ***git tag -v (tag)*** -> mostra informações da annotated tag digitada, mas se não tiver anotação nela não funciona
 
 
 <h3>Tutoriais </h3>
@@ -94,13 +100,22 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - Clicar no create;
 - Para compartilhar é só copiar o link da página web: https://gist.github.com/Lucas-ZC/638945c1ac2b8a16f7e3f4126087d00f.
 
+***Públicar um release:***
+- No canto direito da área code, clique em "Create a new release";
+- Select a tag
+- Selecione a tag que quer fazer o release
+- Em release title, dê um título
+- Em Write, escreva sobre o projeto. Dica: Clicando em "generate release notes", quem acessar o link terá acesso a um diff do que teve de diferente do código da tag recente e a tag antecessora.
+
 <h3>Conceitos </h3>
 - branch: ramificações ou linhas de trabalho no projeto, por exemplo a main
 - head: 'último commit', é a branch que está no código.
 - staging area: é a área onde ficam os arquivos preparados para serem commitados. Arquivos entram nela com git add e saem com git restore --staged.
-- Repositório: é um local de armazenamento digital, utilizado para gerenciar arquivos, documentos, código-fonte e outros recursos de um projeto
-- Hash: código que é único para cada commit, tendo em torno de 40 caracteres
-- Git: é um sistema de controle de versão local que mantém o histórico completo de alterações do projeto. Ele permite salvar versões do código por meio de commits, facilitando o retorno a estados anteriores. Além disso, possibilita o uso de branches, permitindo o desenvolvimento paralelo de funcionalidades e a posterior integração dessas mudanças à branch principal.
+- Repositório: é um local de armazenamento digital, utilizado para gerenciar arquivos, documentos, código-fonte e outros recursos de um projeto.
+- Hash: código que é único para cada commit, tendo em torno de 40 caracteres.
+- Tag (do git): .
+- Git: é um sistema de controle de versão local que mantém o histórico completo de alterações do projeto. Ele permite salvar versões do código por meio de commits, facilitando o retorno a estados anteriores. Além disso, possibilita o uso de 
+branches, permitindo o desenvolvimento paralelo de funcionalidades e a posterior integração dessas mudanças à branch principal.
 - GitHub: é uma plataforma que oferece hospedagem remota para repositórios Git, funcionando como backup e ponto central do projeto. Ele facilita a colaboração entre desenvolvedores por meio de pull requests, revisão de código e issues. Também é amplamente usado como portfólio público e fornece ferramentas adicionais, como GitHub Actions, automação e recursos de CI/CD.
 
 ***Adicionar cobra no readme:***
