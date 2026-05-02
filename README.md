@@ -45,6 +45,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git branch*** -> mostra as branches disponíveis
 - ***git branch -d (branch)*** -> deleta a branch digitada
 - ***git switch (branch)*** -> troca para a branch digitada
+  - git switch e restore são divisões mais específicas do git checkout
 - ***git switch -c (branch)*** -> cria e troca para a branch criada
 - ***git merge (branch)*** -> junta a branch informada à branch atual, preservando o histórico, normalmente criando um commit de merge
 - ***git rebase (branch)*** -> reaplica os commits da branch atual em cima da branch informada, atualizando a branch ramificada e criando um histórico linear (sem commit de merge)
