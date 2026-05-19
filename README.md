@@ -25,7 +25,7 @@ OBS: onde houver parênteses são variáveis para serem substituídas
 - ***git config --global user.name “Fulano”*** -> salvar nome
 - ***git branch -M main*** -> renomeia a branch atual para main
 - ***git status*** -> status das últimas alterações
-- ***git remote add origin link do ssh do Git hub*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
+- ***git remote add origin (link do ssh do Git hub)*** -> adiciona um repositório remoto, com o URL do seu repositório no GitHub via SSH
 - ***git remote*** -> listar repositórios remotos
 - ***git push -u origin main*** -> Envia seus commits locais para o repositório remoto no GitHub e configura o rastreamento da branch
 - ***git push origin main*** -> envia os commits do repositório local pro repositório remoto
